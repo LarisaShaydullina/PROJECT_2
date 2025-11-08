@@ -1,6 +1,12 @@
 from src.vacancies import Vacancies
 
-vac1 = Vacancies("Тестировщик", "https://hh.ru/", {"from": 1, "to": 2, "currency": "RUB"}, "Как-то", "Что-то")
+vac1 = Vacancies(
+    "Тестировщик",
+    "https://hh.ru/",
+    {"from": 1, "to": 2, "currency": "RUB"},
+    "Как-то",
+    "Что-то",
+)
 vac2 = Vacancies.get_vacancies_from_list(
     [
         {
@@ -73,7 +79,19 @@ def test_str_vacancies():
 
 
 def test_comparison_vacancies():
-    vac4 = Vacancies("Разработчик", "https://hh.ru/", {"from": 3, "to": 4, "currency": "RUB"}, "Как-то", "Что-то")
+    vac4 = Vacancies(
+        "Разработчик",
+        "https://hh.ru/",
+        {"from": 3, "to": 4, "currency": "RUB"},
+        "Как-то",
+        "Что-то",
+    )
     assert vac1.__ge__(vac4) == False
-    vac5 = Vacancies("Разработчик", "https://hh.ru/", {"from": 1, "to": 2, "currency": "RUB"}, "Как-то", "Что-то")
+    vac5 = Vacancies(
+        "Разработчик",
+        "https://hh.ru/",
+        {"from": 1, "to": 2, "currency": "RUB"},
+        "Как-то",
+        "Что-то",
+    )
     assert vac1.__ge__(vac5) == True

@@ -19,7 +19,9 @@ class HHApi(BaseApi):
 
         self.__params["text"] = keyword
         while self.__params.get("page") != 20:
-            response = requests.get(self.__url, headers=self.__headers, params=self.__params)
+            response = requests.get(
+                self.__url, headers=self.__headers, params=self.__params
+            )
             vacancies = response.json()["items"]
             self.__vacancies.extend(vacancies)
             self.__params["page"] += 1
